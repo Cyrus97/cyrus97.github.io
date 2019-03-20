@@ -8,22 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/font-awesome.min.css">
-    <script src="main.js"></script>
+    <script>
+        var api = "http://t.weather.sojson.com/api/weather/city/101210101";
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var json = JSON.parse(request.responseText);
+                var today = json['data']['forecast'][0];
+                changeWeather(today);
+            }
+        };
+
+        request.open('GET', api);
+        request.send();
+
+        function changeWeather(data) {
+            var weather = document.getElementById('weather');
+            weather.lastElementChild.innerText = data['type'];
+        }
+    </script>
+
 </head>
 
 <body>
     <div class="profile">
         <header>
-            <img class="avatar" src="assets/image/avatar.png">
+            <img class="avatar" src="assets/image/avatar.png" alt="avatar">
         </header>
         <section class="block">
             <div id="location" class="info">
                 <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                <span>浙江</span>
+                <span>浙江杭州</span>
             </div>
             <div id="weather" class="info">
                 <span><i class="fa fa-cloud" aria-hidden="true"></i></span>
-                <span>多云</span>
+                <span>晴</span>
             </div>
         </section>
         <section class="quote">

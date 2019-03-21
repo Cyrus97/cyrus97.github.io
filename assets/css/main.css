@@ -55,7 +55,11 @@ header {
 
 .block .info {
     display: inline-block;
-    margin: 0 20px;
+    margin-left: 20px;
+}
+
+.block .info:first-child {
+    margin-left: 0;
 }
 
 .quote {

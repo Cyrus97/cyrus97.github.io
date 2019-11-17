@@ -16,6 +16,7 @@ header {
 .dark {
     /* background: #fcefe8; */
     background: #161823;
+    color: #6C7486;
 }
 
 .avatar {
@@ -27,10 +28,6 @@ header {
 
 .block {
     margin: 0 auto 7%;
-}
-
-.profile p {
-    color: #6C7486;
 }
 
 .links {
@@ -53,21 +50,20 @@ header {
     text-underline-position: under;
 }
 
-.block .info {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.block .info:first-child {
-    margin-left: 0;
-}
-
 .quote {
-    margin: 7% 7%;
+    margin: 7% 7% 12% 7%;
 }
 
-.quote img {
-    width: 50%;
+.quote .content {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.quote .from {
+    display: block;
+    text-align: right;
+    line-height: 2;
+    padding-right: 8px;
 }
 
 .quote-line {
@@ -76,6 +72,10 @@ header {
     background: #242836;
 }
 
-.info span {
-    color: #6C7486;
+footer {
+    font-size: 14px;
+    position: fixed;
+    bottom: 14px;
+    text-align: center;
+    width: 100%;
 }

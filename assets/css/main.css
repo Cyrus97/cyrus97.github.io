@@ -79,3 +79,9 @@ footer {
     text-align: center;
     width: 100%;
 }
+
+footer a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #6C7486;
+}

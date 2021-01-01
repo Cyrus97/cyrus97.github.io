@@ -10,17 +10,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
     <link crossorigin="anonymous" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y"
         href="https://lib.baomitu.com/font-awesome/5.8.0/css/all.min.css" rel="stylesheet">
-    <script>
-        let api = "https://v1.hitokoto.cn"
-        fetch(api).then(res => {
-            return res.json()
-        }).then(data => {
-            document.getElementsByClassName('content')[0].innerText = data.hitokoto
-            document.getElementsByClassName('from')[0].innerText = `From - ${data.from}`
-        }).catch(error => {
-            console.log(error)
-        })
-    </script>
 </head>
 
 <body>
@@ -52,7 +41,7 @@
         </section>
     </div>
     <footer>
-        <div>ヾ(=･ω･=)o<©2019 Made With ❤ </div>
+        <div>ヾ(=･ω･=)o< © <span id="footer-year"></span> Made With ❤ </div>
         <div>
             <a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备19003259号</a>
             <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img
@@ -60,5 +49,17 @@
         </div>
     </footer>
 </body>
+<script>
+    fetch('https://v1.hitokoto.cn')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementsByClassName('content')[0].innerText = data.hitokoto
+            document.getElementsByClassName('from')[0].innerText = `From - ${data.from}`
+        })
+        .catch(error => {
+            console.log(error)
+        })
 
+    document.getElementById("footer-year").innerText = `2019-${new Date().getFullYear()}`
+</script>
 </html>

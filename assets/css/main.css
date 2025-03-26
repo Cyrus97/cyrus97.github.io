@@ -80,7 +80,7 @@ footer {
     width: 100%;
 }
 
-footer a {
+footer a, footer span {
     font-size: 12px;
     text-decoration: none;
     color: #6C7486;
